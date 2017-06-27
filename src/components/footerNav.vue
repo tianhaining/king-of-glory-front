@@ -1,11 +1,11 @@
 <template>
   <div>
-    <mu-paper style="max-width: 376px; ">
-      <mu-bottom-nav :value="bottomNav" shift @change="handleChange">
-        <mu-bottom-nav-item value="movies" title="Movies" icon="ondemand_video"/>
-        <mu-bottom-nav-item value="music" title="Music" icon="music_note"/>
-        <mu-bottom-nav-item value="books" title="Books" icon="books"/>
-        <mu-bottom-nav-item value="pictures" title="Pictures" icon="photo"/>
+    <mu-paper>
+      <mu-bottom-nav :value="bottomNav" @change="handleChange">
+        <mu-bottom-nav-item value="news" title="资讯" icon="fiber_new"/>
+        <mu-bottom-nav-item value="hero" title="英雄" icon="pets"/>
+        <mu-bottom-nav-item value="books" title="攻略" icon="books"/>
+        <mu-bottom-nav-item value="player" title="玩家" icon="person"/>
       </mu-bottom-nav>
     </mu-paper>
   </div>
@@ -13,11 +13,9 @@
 
 <script>
 export default {
-  name: 'footerNav',
   data () {
     return {
-      bottomNav: 'movies',
-      bottomNavColor: 'movies'
+      bottomNav: 'news',
     }
   },
   methods: {
@@ -29,6 +27,20 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-
+<style lang="less">
+.mu-paper {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  .mu-bottom-nav {
+    height: 100px;
+    i {
+      font-size: 35px;
+    };
+    span {
+      font-size: 35px;
+    }
+  }
+}
 </style>

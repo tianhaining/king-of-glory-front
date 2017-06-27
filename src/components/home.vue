@@ -1,8 +1,11 @@
 <template>
-  <div>
+  <div class="home">
+      <!-- <mu-appbar title="Title"></mu-appbar> -->
       <header-bar></header-bar>
-      <div>
-        <router-view></router-view>
+      <div class="home-container" id="home-container">
+        <transition name="">
+          <router-view></router-view>
+        </transition>
       </div>
       <footer-nav></footer-nav>
   </div>
@@ -26,6 +29,23 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-
+<style lang="less">
+.home {
+  a {
+    color: #333 !important;
+  }
+  &-container {
+    width: 100%;
+    // position: absolute;
+    // top: 45px;
+    // bottom: 56px;
+    overflow-y: scroll;
+  }
+}
+.bounce-enter-active, .bounce-leave-active {
+  animation: slideInRight 0.1s;
+}
+.bounce-enter, .bouncede-leave-to /* .fade-leave-active in <2.1.8 */ {
+  animation: slideOutLeft 0.1s;
+}
 </style>

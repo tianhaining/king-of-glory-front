@@ -1,8 +1,11 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+
 import MuseUI from 'muse-ui'
 import 'muse-ui/dist/muse-ui.css'
+import 'muse-ui/dist/theme-light.css' // 使用 teal 主题
+
 Vue.config.productionTip = false
 
 Vue.use(MuseUI);
