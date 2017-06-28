@@ -13,7 +13,7 @@ export default {
   name: 'login',
   methods: {
     enter() {
-      this.$router.push('/home/news')
+      this.$router.push('/home/news');
     }
   }
 }
@@ -31,13 +31,14 @@ export default {
     &_tip {
       width: 100%;
       padding: 200px 0;
-      font-size: 24px;
+      font-size: 35px;
       color: #fff;
       font-weight: bold;
     }
     &_enter {
       width: 100%;
       text-align: center;
+      font-size: 35px;
     }
   }
 }

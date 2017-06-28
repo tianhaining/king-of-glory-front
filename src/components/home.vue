@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-      <!-- <mu-appbar title="Title"></mu-appbar> -->
       <header-bar></header-bar>
       <div class="home-container" id="home-container">
         <transition name="">
@@ -40,6 +39,7 @@ export default {
     // top: 45px;
     // bottom: 56px;
     overflow-y: scroll;
+    font-size: 35px;
   }
 }
 .bounce-enter-active, .bounce-leave-active {

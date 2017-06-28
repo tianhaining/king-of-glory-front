@@ -1,17 +1,21 @@
 <template>
   <div>
-    <mu-appbar title="Title"></mu-appbar>
+    <mu-appbar :title="title"></mu-appbar>
   </div>
 </template>
 
 <script>
+import {mapState} from 'Vuex'
 export default {
   name: 'headerBar',
   data () {
     return {
-
+      // title: 'news'
     }
-  }
+  },
+  computed: mapState({
+    title: state => state.title
+  })
 }
 </script>
 

@@ -4,7 +4,7 @@
       <mu-bottom-nav :value="bottomNav" @change="handleChange">
         <mu-bottom-nav-item value="news" title="资讯" icon="fiber_new"/>
         <mu-bottom-nav-item value="hero" title="英雄" icon="pets"/>
-        <mu-bottom-nav-item value="books" title="攻略" icon="books"/>
+        <mu-bottom-nav-item value="strategy" title="攻略" icon="books"/>
         <mu-bottom-nav-item value="player" title="玩家" icon="person"/>
       </mu-bottom-nav>
     </mu-paper>
@@ -20,7 +20,12 @@ export default {
   },
   methods: {
     handleChange (val) {
-      this.bottomNav = val
+      this.bottomNav = val;
+      this.$router.push({name: val});
+      this.setTitle(val);
+    },
+    setTitle (val){
+      this.$store.commit('set_title', val);
     }
   }
 }
@@ -34,12 +39,15 @@ export default {
   left: 0;
   width: 100%;
   .mu-bottom-nav {
-    height: 100px;
+    height: 110px;
     i {
       font-size: 35px;
     };
     span {
       font-size: 35px;
+    };
+    button {
+      margin: 0 auto;
     }
   }
 }
