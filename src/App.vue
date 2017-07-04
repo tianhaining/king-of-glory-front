@@ -14,7 +14,11 @@ export default {
 }
 </script>
 
-<style>
+<style lang="less">
+@font-size: 40px;
+* {
+  font-size: @font-size;
+}
 #app {
   height: 100%;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;

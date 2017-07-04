@@ -1,9 +1,9 @@
 <template>
   <div class="landing-page">
     <div class="landing-page-content">
-      <p class="landing-page-content_tip">王者荣耀助手</p>
+      <!-- <p class="landing-page-content_tip">王者荣耀助手</p> -->
       <p class="landing-page-content_enter">
-        <mu-raised-button label="Welcome" class="demo-raised-button" @click="enter" primary/>
+        <mu-raised-button label="进入" class="demo-raised-button" @click="enter" primary/>
       </p>
     </div>
   </div>
@@ -19,27 +19,38 @@ export default {
 }
 </script>
 <style lang="less" scoped>
+.common-style (@fontSize: 35px){
+  width: 100%;
+  font-size: @fontSize;
+}
 .landing-page {
   width: 100%;
   height: 100%;
-  background: url('../assets/king-of-glory.jpg') no-repeat;
+  background: url('../assets/page1.jpg') no-repeat;
   background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
   &-content {
+    position: fixed;
+    bottom: 0px;
     &_tip {
-      width: 100%;
+      .common-style();
       padding: 200px 0;
-      font-size: 35px;
       color: #fff;
       font-weight: bold;
     }
     &_enter {
-      width: 100%;
+      .common-style();
       text-align: center;
-      font-size: 35px;
+      padding: 30px;
     }
+  }
+}
+.mu-raised-button {
+  &-inverse {
+    padding: 30px;
+    color: #DAA520;
   }
 }
 </style>

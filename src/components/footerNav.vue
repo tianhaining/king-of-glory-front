@@ -33,6 +33,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less">
+@font-size: 35px;
 .mu-paper {
   position: fixed;
   bottom: 0;
@@ -40,14 +41,28 @@ export default {
   width: 100%;
   .mu-bottom-nav {
     height: 110px;
+    background-color: #474a4f;
     i {
-      font-size: 35px;
+      font-size: @font-size;
     };
     span {
-      font-size: 35px;
+      font-size: @font-size;
     };
     button {
       margin: 0 auto;
+    };
+  }
+}
+.mu-bottom-item {
+  &-active {
+    .mu-bottom-item {
+      @kingColor: #DAA520;
+      &-text {
+        color: @kingColor;
+      };
+      &-icon {
+        color: @kingColor;
+      }
     }
   }
 }

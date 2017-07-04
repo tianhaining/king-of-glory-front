@@ -39,7 +39,7 @@ export default {
     // top: 45px;
     // bottom: 56px;
     overflow-y: scroll;
-    font-size: 35px;
+    // font-size: 35px;
   }
 }
 .bounce-enter-active, .bounce-leave-active {
