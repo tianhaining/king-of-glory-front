@@ -1,11 +1,15 @@
 <template>
     <div class="news">
+
       <div class="news-banners">
         <swiper :options="swiperOption">
-          <swiper-slide v-for="news in bannerNews"><a :href="news.article_url"><img :src="news.image_url_big" class="banner-item"  alt="" height="20%" width="100%"></a></swiper-slide>
+          <swiper-slide v-for="news in bannerNews" :key="news._id">
+              <img :src="news.image_url_big" class="banner-item"  :alt="news.title" height="20%" width="100%">
+          </swiper-slide>
           <div class="swiper-pagination" slot="pagination"></div>
         </swiper>
       </div>
+
       <div class="news-list">
         <div class="news-list-item" v-for="news in newstNews">
           <a :href="news.article_url">
@@ -25,9 +29,11 @@
           </a>
         </div>
       </div>
+
     </div>
 </template>
 <script>
+import {mapState} from 'Vuex'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 import { newstNews, bannerNews } from '../data'
 import { pv } from '../filters'
@@ -41,7 +47,6 @@ export default {
           paginationClickable: true,
           autoplay: 3000
         },
-        bannerNews: bannerNews,
         newstNews: newstNews
     }
   },
@@ -51,8 +56,11 @@ export default {
   filters: {
     pv
   },
+  computed: mapState({
+    bannerNews: state => state.bannersNewsData
+  }),
   created(){
-
+      this.$store.commit('getBannersNewsData');
   },
   components: {
       swiper,
@@ -61,12 +69,6 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-  .swiper-pagination {
-    &-bullet {
-      width: 20px;
-      height: 20px;
-    }
-  }
   .news {
     padding: 130px 0;
     &-list {

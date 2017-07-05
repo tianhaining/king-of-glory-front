@@ -1,6 +1,6 @@
 <template>
   <div class="news_style">
-      <mu-flexbox class="mt8">
+      <mu-flexbox class="mt8">.0
         <mu-flexbox-item class="flex-demo">
           <card></card>
         </mu-flexbox-item>
@@ -8,8 +8,6 @@
           <card></card>
         </mu-flexbox-item>
       </mu-flexbox>
-      </mu-flexbox>
-      <p>{{newsData}}</p>
   </div>
 </template>
 <script>
@@ -26,10 +24,10 @@ export default {
 
   },
   computed: mapState({
-    newsData: state => state.newsData
+    newsData: state => state.bannersNewsData
   }),
   created(){
-    this.$store.commit('getNewsData');
+    this.$store.commit('getBannersNewsData');
   },
   components: {
     card
