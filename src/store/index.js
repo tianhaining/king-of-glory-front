@@ -23,7 +23,7 @@ export default new Vuex.Store({
     getBannersNewsData(state){//获取资讯图片轮播数据
       axios.get(state.Host + '/api/getBannersNews')
       .then(function(res){
-        console.log(JSON.stringify(res.data.bannersNews));
+        //console.log(JSON.stringify(res.data.bannersNews));
         state.bannersNewsData = res.data.bannersNews;
       })
     }
