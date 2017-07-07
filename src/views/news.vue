@@ -1,6 +1,5 @@
 <template>
     <div class="news">
-
       <div class="news-banners">
         <swiper :options="swiperOption">
           <swiper-slide v-for="news in bannerNews" :key="news._id">
@@ -9,7 +8,6 @@
           <div class="swiper-pagination" slot="pagination"></div>
         </swiper>
       </div>
-
       <div class="news-list">
         <div class="news-list-item" v-for="news in newstNews">
           <a :href="news.article_url">
@@ -29,13 +27,12 @@
           </a>
         </div>
       </div>
-
     </div>
 </template>
 <script>
 import {mapState} from 'Vuex'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
-import { newstNews, bannerNews } from '../data'
+// import { newstNews } from '../data'
 import { pv } from '../filters'
 export default {
   name: 'news',
@@ -47,20 +44,32 @@ export default {
           paginationClickable: true,
           autoplay: 3000
         },
-        newstNews: newstNews
+        //newstNews: newstNews,
+        // bannerNews: bannerNews
+        //count: 1
     }
   },
   methods: {
-
+    // postNewsTest (){
+    //   this.count ++;
+    //   if (this.count == 3){
+    //     this.count = 1;
+    //   }
+    //   this.$store.commit('postNewsData');
+    // }
   },
   filters: {
     pv
   },
   computed: mapState({
-    bannerNews: state => state.bannersNewsData
+    bannerNews: state => state.bannersNewsData,
+    newstNews: state => state.newsData
   }),
   created(){
+      //获取轮播图片数据
       this.$store.commit('getBannersNewsData');
+      //获取资讯数据
+      this.$store.commit('getNewsData');
   },
   components: {
       swiper,

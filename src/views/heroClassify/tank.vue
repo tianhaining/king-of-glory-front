@@ -2,7 +2,13 @@
   <div class="">
     <h2>坦克</h2>
     <p>这是坦克</p>
-    <mu-flexbox class="mt8">
+    <mu-flexbox>
+      <mu-flexbox-item class="flex-demo">
+        <card></card>
+      </mu-flexbox-item>
+      <mu-flexbox-item class="flex-demo">
+        <card></card>
+      </mu-flexbox-item>
       <mu-flexbox-item class="flex-demo">
         <card></card>
       </mu-flexbox-item>
@@ -16,6 +22,7 @@
 <script>
 import card from '@/components/card.vue'
 export default {
+  
   data () {
     return {
 
