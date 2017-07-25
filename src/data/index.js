@@ -1,3 +1,17 @@
+export const tanksList = [
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/187/187.jpg', title: '东皇太一'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/135/135.jpg', title: '项羽'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/114/114.jpg', title: '刘禅'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/108/108.jpg', title: '墨子'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/144/144.jpg', title: '程咬金'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/113/113.jpg', title: '庄周'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/105/105.jpg', title: '廉颇'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/120/120.jpg', title: '白起'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/149/149.jpg', title: '刘邦'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/168/168.jpg', title: '牛魔'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/171/171.jpg', title: '张飞'}
+]
+
 export const newstNews = [{
 	title: "3日免费英雄更换公告",
 	article_url: "http://qt.qq.com/php_cgi/news/php/varcache_article.php?id=28955&version=$PROTO_VERSION$",

@@ -1,15 +1,16 @@
 import Vue from 'Vue'
 import Vuex from 'Vuex'
 import axios from 'axios'
-import { newstNews } from '../data'
+import { newstNews, tanksList } from '../data'
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
     title: '资讯',
-    Host: 'http://10.202.2.67:8000',
+    Host: 'http://10.202.4.153:8000',
     bannersNewsData: '',
-    newsData: ''
+    newsData: '',
+    tanksList: []
   },
   mutations: {
     set_title(state, val){//设置底部显示
@@ -34,6 +35,8 @@ export default new Vuex.Store({
     //     });
     //   })
     // },
+
+    //TODO 资讯页面
     getBannersNewsData(state){//获取资讯图片轮播数据
       axios.get(state.Host + '/api/getBannersNews')
       .then(function(res){
@@ -46,6 +49,25 @@ export default new Vuex.Store({
       .then(function(res){
         //console.log(JSON.stringify(res.data.news));
         state.newsData = res.data.news;
+      })
+    },
+    //TODO 英雄页面
+    postTanksList(state){
+      var tanksListInfo = tanksList;
+      tanksListInfo.forEach( (val) => {
+          axios.post(state.Host + '/api/saveTanksList', val)
+          .then((res) => {
+            console.log(res.data.message);
+          })
+          .catch((error) => {
+            console.log(error);
+          })
+      })
+    },
+    getTanksData(state){
+      axios.get(state.Host + '/api/getTanksList')
+      .then(function(res){
+          state.tanksList = res.data.tanksList;
       })
     }
   }
