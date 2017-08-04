@@ -8,6 +8,7 @@
           <div class="swiper-pagination" slot="pagination"></div>
         </swiper>
       </div>
+
       <div class="news-list">
         <div class="news-list-item" v-for="news in newstNews">
           <a :href="news.article_url">
@@ -27,6 +28,7 @@
           </a>
         </div>
       </div>
+
     </div>
 </template>
 <script>

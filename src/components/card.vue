@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div class="" @click="goHeroIntroduce">
     <mu-card>
       <mu-card-media>
         <img :src="cardInfo.path" />
@@ -16,7 +16,12 @@ export default {
 
     }
   },
-  props: ['cardInfo']
+  props: ['cardInfo'],
+  methods: {
+    goHeroIntroduce(){
+      this.$router.push('heroIntroduce');
+    }
+  }
 }
 </script>
 

@@ -1,7 +1,7 @@
 <template>
   <div class="">
-    <mu-flexbox wrap="wrap" v-for="tankRow in cardInfoList">
-      <mu-flexbox-item class="flex-demo" v-for="item in tankRow">
+    <mu-flexbox wrap="wrap" v-for="(tankRow, index) in tanksList" :key="index">
+      <mu-flexbox-item class="flex-demo" v-for="(item, index) in tankRow" :key="index">
         <card v-bind:cardInfo="item"></card>
       </mu-flexbox-item>
     </mu-flexbox>
@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import {mapState} from 'vuex'
 import card from '@/components/card.vue'
 export default {
   data () {
@@ -24,20 +25,13 @@ export default {
       // postTanksList(){
       //   this.$store.commit('postTanksList');
       // }
-      splitArray(arr, len){
-          let a_len = arr.length;
-          let result = [];
-          for (var i = 0; i < a_len; i+=len) {
-            result.push(arr.slice(i, i+len));
-          }
-          return result;
-      }
   },
+  computed: mapState({
+    tanksList: state => state.tanksList
+  }),
   created (){
     //获取坦克数据
     this.$store.commit('getTanksData');
-
-    this.cardInfoList = this.splitArray(this.$store.state.tanksList, 4);
   }
 }
 </script>

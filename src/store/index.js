@@ -1,16 +1,27 @@
 import Vue from 'Vue'
 import Vuex from 'Vuex'
 import axios from 'axios'
-import { newstNews, tanksList } from '../data'
+import { newstNews, tanksList, heroInfo} from '../data'
 Vue.use(Vuex);
+
+//TODO 对获取的数据进行分组处理
+var splitArray = (arr, len) => {
+    let a_len = arr.length;
+    let result = [];
+    for (var i = 0; i < a_len; i+=len) {
+      result.push(arr.slice(i, i+len));
+    }
+    return result;
+}
 
 export default new Vuex.Store({
   state: {
     title: '资讯',
-    Host: 'http://10.202.4.153:8000',
+    Host: 'http://10.202.4.173:8000',
     bannersNewsData: '',
     newsData: '',
-    tanksList: []
+    tanksList: [],
+    heroInfo: {}
   },
   mutations: {
     set_title(state, val){//设置底部显示
@@ -67,8 +78,11 @@ export default new Vuex.Store({
     getTanksData(state){
       axios.get(state.Host + '/api/getTanksList')
       .then(function(res){
-          state.tanksList = res.data.tanksList;
+          state.tanksList = splitArray(res.data.tanksList, 4);
       })
+    },
+    getHeroInfo(state){
+        state.heroInfo = heroInfo;
     }
   }
 })
