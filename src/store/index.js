@@ -1,7 +1,7 @@
 import Vue from 'Vue'
 import Vuex from 'Vuex'
 import axios from 'axios'
-import { newstNews, tanksList, heroInfo} from '../data'
+import { newstNews, tanksList, heroInfo, heroSkillPlus} from '../data'
 Vue.use(Vuex);
 
 //TODO 对获取的数据进行分组处理
@@ -21,7 +21,8 @@ export default new Vuex.Store({
     bannersNewsData: '',
     newsData: '',
     tanksList: [],
-    heroInfo: {}
+    heroInfo: {},
+    heroSkillPlus: {}
   },
   mutations: {
     set_title(state, val){//设置底部显示
@@ -83,6 +84,9 @@ export default new Vuex.Store({
     },
     getHeroInfo(state){
         state.heroInfo = heroInfo;
+    },
+    getHeroSkillPlus(state){
+        state.heroSkillPlus = heroSkillPlus;
     }
   }
 })
