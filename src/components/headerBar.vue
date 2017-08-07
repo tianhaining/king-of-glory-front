@@ -19,7 +19,11 @@ export default {
   },
   computed: mapState({
     title: state => state.title
-  })
+  }),
+  created () {
+    //TODO 用于处于不同页面的时刷新底部显示
+    this.$store.commit('set_title', this.$route.name);
+  }
 }
 </script>
 

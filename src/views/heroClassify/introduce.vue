@@ -71,6 +71,13 @@ export default {
 </script>
 
 <style lang="less">
+/*用于展开与关闭按钮的通用样式*/
+.pane-button-normal {
+  font-size: .85rem;
+  color: #343440;
+  margin: 0rem;
+  overflow: hidden;
+}
 .introduce {
   margin: 1rem 0;
 }
@@ -87,17 +94,11 @@ export default {
       margin: .5rem .5rem 0 .5rem;
       border-bottom: 1px solid #999;
       &-p-close {
-        font-size: .85rem;
-        color: #343440;
-        margin: 0rem;
+        .pane-button-normal;
         height: 9rem;
-        overflow: hidden;
       }
       &-p-open {
-        font-size: .85rem;
-        color: #343440;
-        margin: 0rem;
-        overflow: hidden;
+        .pane-button-normal;
       }
     }
     &-button {

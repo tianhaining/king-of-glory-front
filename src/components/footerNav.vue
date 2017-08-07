@@ -12,10 +12,11 @@
 </template>
 
 <script>
+import {mapState} from 'vuex'
 export default {
   data () {
     return {
-      bottomNav: 'news',
+      bottomNav: 'news'
     }
   },
   methods: {
@@ -26,6 +27,14 @@ export default {
     },
     setTitle (val){
       this.$store.commit('set_title', val);
+    }
+  },
+  created () {
+    //TODO 用于刷新的时候底部导航的显示
+    if (this.$route.name == 'heroIntroduce') {
+        this.bottomNav = 'hero';
+    }else {
+        this.bottomNav = this.$route.name;
     }
   }
 }

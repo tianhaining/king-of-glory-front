@@ -10,12 +10,12 @@
               <mu-tab value="introduce" title="介绍"></mu-tab>
               <mu-tab value="skillPlus" title="技能加点"></mu-tab>
               <mu-tab value="useSkill" title="使用技巧"></mu-tab>
-              <mu-tab value="strategy" title="攻略"></mu-tab>
+              <!-- <mu-tab value="strategy" title="攻略"></mu-tab> -->
           </mu-tabs>
           <div v-if="activeTab === 'introduce'"><introduce :introduceObject="heroInfo.introduce"></introduce></div><!--介绍-->
           <div v-if="activeTab === 'skillPlus'"><skillPlus></skillPlus></div><!--技能加点-->
           <div v-if="activeTab === 'useSkill'"><useSkill></useSkill></div><!--使用技巧-->
-          <div v-if="activeTab === 'strategy'"><strategy></strategy></div><!--攻略-->
+          <!-- <div v-if="activeTab === 'strategy'"><strategy></strategy></div> 攻略-->
       </div>
   </div>
 </template>
@@ -57,7 +57,7 @@ export default {
   padding-bottom: 2.6rem;
 }
 .sp_banner {
-    margin-top: 150px;
+    margin-top: 3.16rem;
     background: url('http://game.gtimg.cn/images/yxzj/img201606/heroimg/135/135-mobileskin-1.jpg');
     background-size: cover;
     border-radius: 5px;

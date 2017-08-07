@@ -13,11 +13,10 @@ var splitArray = (arr, len) => {
     }
     return result;
 }
-
 export default new Vuex.Store({
   state: {
     title: '资讯',
-    Host: 'http://10.202.4.173:8000',
+    Host: 'http://10.202.4.192:8000',
     bannersNewsData: '',
     newsData: '',
     tanksList: [],
@@ -30,7 +29,8 @@ export default new Vuex.Store({
         news: '资讯',
         hero: '英雄',
         strategy: '攻略',
-        player: '玩家'
+        player: '玩家',
+        heroIntroduce: '英雄'//处于英雄介绍的时候底部也显示英雄
       }
       state.title = val_title[val];
     },

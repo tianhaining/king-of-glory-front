@@ -1,15 +1,18 @@
 <template lang="html">
     <div class="skillPlus">
       <div class="skillPlus-div">
-        <div class="skillPlus-div-img">
+        <div class="skillPlus-div-img" @click="skillChange">
             <mu-flexbox>
               <mu-flexbox-item v-for="item, index in heroSkillPlus.skill" :key="index">
-                <img :src="item.imgSrc" alt="index">
+                <img :src="item.imgSrc" :alt="index">
               </mu-flexbox-item>
             </mu-flexbox>
         </div>
         <div class="skillPlus-div-text">
-            <h3 class="skillPlus-div-text-h3">{{skillIntroduce.name}}<span>(冷却值：{{skillIntroduce.coolingValue}} 消耗： {{skillIntroduce.consume}})</span></h3>
+            <h3 class="skillPlus-div-text-h3">
+              {{skillIntroduce.name}}
+              <span>(冷却值：{{skillIntroduce.coolingValue}} 消耗： {{skillIntroduce.consume}})</span>
+            </h3>
             <p>{{skillIntroduce.text}}</p>
         </div>
         <div class="skillPlus-div-tip">
@@ -18,7 +21,7 @@
       </div>
       <div class="skillPlus-div">
         <h3 class="skillPlus-div-h3">加点建议</h3>
-        <div class="">
+        <div class="skillPlus-div-advise">
             <mu-flexbox>
                 <mu-flexbox-item>
                     <mu-flexbox>
@@ -63,6 +66,17 @@ export default {
     created () {
       this.$store.commit('getHeroSkillPlus');
       this.skillIntroduce = this.$store.state.heroSkillPlus.skill[0];
+    },
+    methods: {
+      //TODO 使用事件代理处理点击每个图片技能数据的切换
+      skillChange (event) {
+          let ev = event || window.event;
+          let target = ev.target || ev.srcElement;//标准浏览器用ev.taeget，IE浏览器用event.srcElement
+          if (target.nodeName.toLowerCase() == 'img') {//当节点为img时事件冒泡才会触发
+              this.skillIntroduce = this.$store.state.heroSkillPlus.skill[target.alt];
+              //target.classList.add("current");还没想好咋处理
+          }
+      }
     }
 }
 </script>
@@ -90,6 +104,10 @@ export default {
       img {
         width: 4rem;
         height: 4rem;
+      }
+      .current {
+        border: .20rem solid #d59b40;
+        border-radius: 1.86rem;
       }
       &-summoner {
         border-radius: 2rem;
@@ -122,6 +140,9 @@ export default {
     background-size: 1rem 1rem;
     padding-left: 1.26rem;
     font-size: 1.1rem;
+  }
+  &-advise{
+    padding-bottom: 1rem;
   }
 }
 </style>
