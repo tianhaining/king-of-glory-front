@@ -4,28 +4,28 @@
             <div class="pane-div">
                 <h3 class="pane-div-h3-relation">英雄关系</h3>
                 <span>最佳搭档</span>
-                <introduceImgText :list="introduceObject.bestPartnerList"></introduceImgText>
+                <introduceImgText :list="heroInfo.bestPartnerList"></introduceImgText>
             </div>
             <div class="pane-div">
                 <span>被谁克制</span>
-                <introduceImgText :list="introduceObject.beRestrainedList"></introduceImgText>
+                <introduceImgText :list="heroInfo.beRestrainedList"></introduceImgText>
             </div>
             <div class="pane-div">
                 <span>克制谁</span>
-                <introduceImgText :list="introduceObject.restrainedList"></introduceImgText>
+                <introduceImgText :list="heroInfo.restrainedList"></introduceImgText>
             </div>
         </div>
         <div class="pane">
             <div class="pane-div">
                 <h3 class="pane-div-h3-story">英雄故事</h3>
-                <p :class="{'pane-div-p-close': isStoryClose, 'pane-div-p-open': !isStoryClose}">&nbsp;&nbsp;&nbsp;&nbsp;{{introduceObject.story}}</p>
+                <p :class="{'pane-div-p-close': isStoryClose, 'pane-div-p-open': !isStoryClose}">&nbsp;&nbsp;&nbsp;&nbsp;{{heroInfo.story}}</p>
             </div>
             <button class="pane-button" type="button" name="button" @click="openStory(0)">{{storyButtonValue}}</button>
         </div>
         <div class="pane">
             <div class="pane-div">
                 <h3 class="pane-div-h3-history">历史上的他</h3>
-                <p :class="{'pane-div-p-close': isHistoryClose, 'pane-div-p-open': !isHistoryClose}">&nbsp;&nbsp;&nbsp;&nbsp;{{introduceObject.history}}</p>
+                <p :class="{'pane-div-p-close': isHistoryClose, 'pane-div-p-open': !isHistoryClose}">&nbsp;&nbsp;&nbsp;&nbsp;{{heroInfo.history}}</p>
             </div>
             <button class="pane-button" type="button" name="button" @click="openStory(1)">{{historyButtonValue}}</button>
         </div>
@@ -34,6 +34,7 @@
 
 <script>
 import introduceImgText from '@/components/introduceImgText.vue'
+import {mapState} from 'vuex'
 export default {
     data(){
         return {
@@ -65,8 +66,12 @@ export default {
           }
       }
     },
-    props: ['introduceObject']
-
+    computed: mapState({
+      heroInfo: state => state.heroInfo
+    }),
+    created(){
+        this.$store.commit('getHeroInfo');
+    },
 }
 </script>
 

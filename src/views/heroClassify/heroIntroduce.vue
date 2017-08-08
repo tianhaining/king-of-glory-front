@@ -12,7 +12,7 @@
               <mu-tab value="useSkill" title="使用技巧"></mu-tab>
               <!-- <mu-tab value="strategy" title="攻略"></mu-tab> -->
           </mu-tabs>
-          <div v-if="activeTab === 'introduce'"><introduce :introduceObject="heroInfo.introduce"></introduce></div><!--介绍-->
+          <div v-if="activeTab === 'introduce'"><introduce></introduce></div><!--介绍-->
           <div v-if="activeTab === 'skillPlus'"><skillPlus></skillPlus></div><!--技能加点-->
           <div v-if="activeTab === 'useSkill'"><useSkill></useSkill></div><!--使用技巧-->
           <!-- <div v-if="activeTab === 'strategy'"><strategy></strategy></div> 攻略-->
