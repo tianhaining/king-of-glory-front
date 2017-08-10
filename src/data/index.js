@@ -1,3 +1,40 @@
+export const strategyVideoList = [{
+		imgSrc: 'http://shp.qpic.cn/cfwebcap/398753883/8869150191f68e5582fc8b1726668016/0/',
+		time: '25:34',
+		text: '【英雄周报】王者荣耀百里守约视频教学',
+		clickNum: '7.7万',
+		lastClickTime: '22小时以前'
+},{
+		imgSrc: 'http://itea-cdn.qq.com/file/tgl/20170809/212x127.1502266613.14b80015009de88011aeb6103334c88e.jpg',
+		time: '08:34',
+		text: '《王者职业教学》第43期：老王无解英雄铠，完美控伤残血反杀！',
+		clickNum: '3.8万',
+		lastClickTime: '22小时以前'
+},{
+		imgSrc: 'http://itea-cdn.qq.com/file/tgl/20170809/212x127.1502243227.8d62cc5bc7aef9f15c651d8b95721c81.jpg',
+		time: '08:00',
+		text: '《AG职业课堂》第11期：流苏百里守约 八百里外狙击心得',
+		clickNum: '12.8万',
+		lastClickTime: '一天以前'
+},{
+		imgSrc: 'http://itea-cdn.qq.com/file/tgl/20170807/212x1272.1502113210.684c35a70a59f2106bf5a534d6b40908.jpg',
+		time: '05:44',
+		text: '《跟我上王者》第35期：隐身靠墙绕后，五分钟学会百里守约！',
+		clickNum: '20.9万',
+		lastClickTime: '2天以前'
+},{
+		imgSrc: 'http://itea-cdn.qq.com/file/tgl/20170804/212x127.1501836828.caff48fc167c5c4a2a522749d5066098.jpg',
+		time: '07:40',
+		text: '《破冰英雄》第31期：老夫子的偷家绝学！',
+		clickNum: '24.6万',
+		lastClickTime: '5天以前'
+},{
+		imgSrc: 'http://itea-cdn.qq.com/file/tgl/20170804/173105.1501829919.6d375c33747c49a9f77ae25aeeb07793.jpg',
+		time: '05:19',
+		text: '《数据封神榜》第二季第8期：胜率前几的英雄都有什么看家本领？',
+		clickNum: '5061',
+		lastClickTime: '6天以前'
+}]
 export const heroInfo = {
 	index: 'xiangyu',
 	name: '项羽',
@@ -310,7 +347,19 @@ export const bannerNews = [{
 	title: "明星赛直播",
 	image_url_big: "http://ossweb-img.qq.com/upload/adw/image/1499221833/1499221833.jpg?_r=1499222132",
 }]
-
+export const strategyBannerNews = [{
+	title: "",
+	image_url_big: "http://shp.qpic.cn/cfwebcap/497237123/ad7db8bc50c20ab8c73066bade9232b1/0/",
+}, {
+	title: "",
+	image_url_big: "http://shp.qpic.cn/cfwebcap/497237123/9afb4e4dc64b86a371b75b401e00438c/0/",
+},{
+	title: "",
+	image_url_big: "http://shp.qpic.cn/cfwebcap/497237123/db69b2a9af2755c3c066f8af2d53a574/0/",
+},{
+	title: "",
+	image_url_big: "http://shp.qpic.cn/cfwebcap/3510576740/d0283cdab02ff54adf437fd374365619/0/",
+}]
 export const newstVideos = [
 
 	{

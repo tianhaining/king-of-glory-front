@@ -1,12 +1,7 @@
 <template>
     <div class="news">
       <div class="news-banners">
-        <swiper :options="swiperOption">
-          <swiper-slide v-for="news in bannerNews" :key="news._id">
-              <img :src="news.image_url_big" class="banner-item"  :alt="news.title" height="20%" width="100%">
-          </swiper-slide>
-          <div class="swiper-pagination" slot="pagination"></div>
-        </swiper>
+        <slide :slideList="bannerNews"></slide>
       </div>
 
       <div class="news-list">
@@ -33,19 +28,14 @@
 </template>
 <script>
 import {mapState} from 'Vuex'
-import { swiper, swiperSlide } from 'vue-awesome-swiper'
 // import { newstNews } from '../data'
 import { pv } from '../filters'
+import slide from '@/components/slide.vue'
 export default {
   name: 'news',
   data() {
     return {
         // newsData:this.$store.state.newsData
-        swiperOption: {
-          pagination: '.swiper-pagination',
-          paginationClickable: true,
-          autoplay: 3000
-        },
         //newstNews: newstNews,
         // bannerNews: bannerNews
         //count: 1
@@ -74,8 +64,7 @@ export default {
       this.$store.commit('getNewsData');
   },
   components: {
-      swiper,
-      swiperSlide
+      slide
   }
 }
 </script>
