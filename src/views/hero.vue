@@ -1,7 +1,6 @@
 <template>
   <div class="hero_style">
       <mu-tabs :value="activeTab" @change="handleTabChange">
-          <mu-tab value="all" title="全部"></mu-tab>
           <mu-tab value="tank" title="坦克"></mu-tab>
           <mu-tab value="warrior" title="战士"></mu-tab>
           <mu-tab value="wizard" title="法师"></mu-tab>
@@ -9,48 +8,41 @@
           <mu-tab value="assassin" title="刺客"></mu-tab>
           <mu-tab value="assist" title="辅助"></mu-tab>
       </mu-tabs>
-      <div class="all" v-if="activeTab === 'all'"><!--全部-->
-          <tank></tank>
-          <warrior></warrior>
-          <wizard></wizard>
-          <shooter></shooter>
-          <assassin></assassin>
-          <assist></assist>
+      <div class="hero_style-list"><!--英雄列表展示区域-->
+          <heroList :heroList="heroListData"></heroList>
       </div>
-      <div class="all" v-if="activeTab === 'tank'"><tank></tank></div><!--坦克-->
-      <div class="all" v-if="activeTab === 'warrior'"><warrior></warrior></div><!--战士-->
-      <div class="all" v-if="activeTab === 'wizard'"><wizard></wizard></div><!--法师-->
-      <div class="all" v-if="activeTab === 'shooter'"><shooter></shooter></div><!--射手-->
-      <div class="all" v-if="activeTab === 'assassin'"><assassin></assassin></div><!--刺客-->
-      <div class="all" v-if="activeTab === 'assist'"><assist></assist></div><!--辅助-->
   </div>
 </template>
 <script>
-import tank from './heroClassify/tank'
-import warrior from './heroClassify/warrior'
-import wizard from './heroClassify/wizard'
-import shooter from './heroClassify/shooter'
-import assassin from './heroClassify/assassin'
-import assist from './heroClassify/assist'
+import {mapState} from 'vuex'
+import heroList from './heroClassify/heroList.vue'
 export default {
-  name: 'news',
+  name: 'hero',
   data() {
     return {
-        activeTab: 'all'
+        activeTab: 'tank'
     }
   },
   methods: {
+    getHeroList () {
+      this.$store.dispatch('getHeroList', {
+        tabVal: this.activeTab
+      });
+    },
     handleTabChange (val) {
       this.activeTab = val;
+      this.getHeroList();
     }
   },
   components: {
-    tank,
-    warrior,
-    wizard,
-    shooter,
-    assassin,
-    assist
+    heroList
+  },
+  computed: mapState({
+    heroListData: state => state.heroListData
+  }),
+  created (){
+    //初始化获取坦克列表
+    this.getHeroList();
   }
 }
 </script>
@@ -74,7 +66,7 @@ export default {
           .mu-tab-common(#DAA520);
         }
     }
-    .all {
+    &-list {
       padding: 30px 0px 30px 30px;
     }
   }

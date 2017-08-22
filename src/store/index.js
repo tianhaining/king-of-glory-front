@@ -1,7 +1,7 @@
 import Vue from 'Vue'
 import Vuex from 'Vuex'
 import axios from 'axios'
-import { newstNews, tanksList, heroInfo, heroSkillPlus, heroUseSkill, strategyBannerNews, strategyVideoList} from '../data'
+import { newstNews, tanksList, warriorList, wizardList, shooterList, assassinList, assistList, heroInfo, heroSkillPlus, heroUseSkill, strategyBannerNews, strategyVideoList, gameNewsList} from '../data'
 Vue.use(Vuex);
 
 //TODO 对获取的数据进行分组处理
@@ -15,16 +15,17 @@ var splitArray = (arr, len) => {
 }
 export default new Vuex.Store({
   state: {
-    title: '资讯',
-    Host: 'http://10.202.4.192:8000',
-    bannersNewsData: '',
-    newsData: '',
-    tanksList: [],
-    heroInfo: {},
-    heroSkillPlus: {},
-    heroUseSkill: {},
-    strategyBannerNews: [],
-    strategyVideoList: {}
+    title: '资讯',//顶部显示
+    Host: 'http://10.202.4.235:8000',//后台API域名
+    bannersNewsData: '',//资讯轮播图
+    newsData: '',//资讯信息
+    heroInfo: {},//单个英雄信息
+    heroSkillPlus: {},//英雄技能加点
+    heroUseSkill: {},//英雄使用技巧
+    strategyBannerNews: [],//策略模块轮播图
+    strategyVideoList: {},//策略热门视频
+    heroListData: [],//英雄列表
+    gameNewsList: []//赛事资讯
   },
   mutations: {
     set_title(state, val){//设置底部显示
@@ -32,8 +33,9 @@ export default new Vuex.Store({
         news: '资讯',
         hero: '英雄',
         strategy: '攻略',
-        player: '玩家',
-        heroIntroduce: '英雄'//处于英雄介绍的时候底部也显示英雄
+        game: '赛事',
+        heroIntroduce: '英雄',//处于英雄介绍的时候底部也显示英雄
+        videoPlay: '攻略'
       }
       state.title = val_title[val];
     },
@@ -55,7 +57,6 @@ export default new Vuex.Store({
     getBannersNewsData(state){//获取资讯图片轮播数据
       axios.get(state.Host + '/api/getBannersNews')
       .then(function(res){
-        //console.log(JSON.stringify(res.data.bannersNews));
         state.bannersNewsData = res.data.bannersNews;
       })
     },
@@ -82,10 +83,25 @@ export default new Vuex.Store({
     getTanksData(state){
       axios.get(state.Host + '/api/getTanksList')
       .then(function(res){
-          state.tanksList = splitArray(res.data.tanksList, 4);
+          state.heroListData = splitArray(res.data.tanksList, 4);
       })
     },
-
+    getWarriorsData(state){
+      state.heroListData = splitArray(warriorList, 4);
+    },
+    getWizardData(state){
+      state.heroListData = splitArray(wizardList, 4);
+    },
+    getShootersData(state){
+      state.heroListData = splitArray(shooterList, 4);
+    },
+    getAssassinData(state){
+      state.heroListData = splitArray(assassinList, 4);
+    },
+    getAssistData(state){
+      state.heroListData = splitArray(assistList, 4);
+    },
+    //TODO 单个英雄介绍
     getHeroInfo(state){//后续处理需要把信息放到数据库
         state.heroInfo = heroInfo;
     },
@@ -95,12 +111,43 @@ export default new Vuex.Store({
     getHeroUseSkill(state){//后续处理需要把信息放到数据库
         state.heroUseSkill = heroUseSkill;
     },
-
+    //TODO 策略页面
     getStrategyBannerNews(state){
         state.strategyBannerNews = strategyBannerNews;
     },
     getStrategyVideoList(state){
         state.strategyVideoList = splitArray(strategyVideoList, 2);
+    },
+    //TODO 赛事页面
+    getGameNewsList(state){
+      state.gameNewsList = gameNewsList;
     }
+  },
+  actions: {
+    getHeroList({commit, state}, payload){//可以向store.commit传入额外的参数，即mutation的载荷payload
+      console.log(payload.tabVal);
+      switch (payload.tabVal) {
+        case 'tank':
+          commit('getTanksData');
+          break;
+        case 'warrior':
+          commit('getWarriorsData');
+          break;
+        case 'wizard':
+          commit('getWizardData');
+          break;
+        case 'shooter':
+          commit('getShootersData');
+          break;
+        case 'assassin':
+          commit('getAssassinData');
+          break;
+        case 'assist':
+          commit('getAssistData');
+          break;
+        default:
+          commit('getTanksData');
+      }
+    },
   }
 })

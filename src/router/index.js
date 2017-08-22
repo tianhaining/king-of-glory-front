@@ -26,9 +26,9 @@ export default new Router({
           name: 'strategy',
           component: require('@/views/strategy'),
         },{
-          path: 'player',
-          name: 'player',
-          component: require('@/views/player'),
+          path: 'game',
+          name: 'game',
+          component: require('@/views/game'),
         },{
           path: 'heroIntroduce',
           name: 'heroIntroduce',

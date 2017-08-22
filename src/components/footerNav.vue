@@ -5,7 +5,7 @@
         <mu-bottom-nav-item value="news" title="资讯" icon="fiber_new"/>
         <mu-bottom-nav-item value="hero" title="英雄" icon="pets"/>
         <mu-bottom-nav-item value="strategy" title="攻略" icon="books"/>
-        <mu-bottom-nav-item value="player" title="玩家" icon="person"/>
+        <mu-bottom-nav-item value="game" title="赛事" icon="person"/>
       </mu-bottom-nav>
     </mu-paper>
   </div>
@@ -33,6 +33,8 @@ export default {
     //TODO 用于刷新的时候底部导航的显示
     if (this.$route.name == 'heroIntroduce') {
         this.bottomNav = 'hero';
+    }else if (this.$route.name == 'videoPlay'){
+        this.bottomNav = 'strategy';
     }else {
         this.bottomNav = this.$route.name;
     }

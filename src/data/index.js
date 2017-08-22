@@ -1,9 +1,42 @@
+export const gameNewsList = [{
+	title: '神坑时刻：董思怡虞姬打不中人？看四爷Knight虞姬如何超神',
+	srcStr: 'https://pvp.qq.com/webplat/info/news_version3/15592/24418/24853/m15626/201708/626891.shtml',
+	dateStr: '08/22'
+},{
+	title: '向往赛场之上的荣耀，eStar指尖、兔子或将转会以求上场？',
+	srcStr: 'https://pvp.qq.com/webplat/info/news_version3/15592/24418/24853/m15626/201708/626890.shtml',
+	dateStr: '08/22'
+},{
+	title: '论干货谁能叫板Fly？顶尖赛事双冠双料MVP舍我其谁',
+	srcStr: 'https://pvp.qq.com/webplat/info/news_version3/15592/24418/24853/m15626/201708/626884.shtml',
+	dateStr: '08/22'
+},{
+	title: '毒蛇与群狼的合作？DL火箭或将与sViper进行合并',
+	srcStr: 'https://pvp.qq.com/webplat/info/news_version3/15592/24418/24853/m15626/201708/626434.shtml',
+	dateStr: '08/22'
+},{
+	title: 'RNG.M王者冠军杯个人赛群访：貂蝉是单挑必拿的',
+	srcStr: 'https://pvp.qq.com/webplat/info/news_version3/15592/24418/24853/m15626/201708/626876.shtml',
+	dateStr: '08/22'
+},{
+	title: 'KPL职业联赛萌神选手大盘点：其实我的职业是卖萌',
+	srcStr: 'https://pvp.qq.com/webplat/info/news_version3/15592/24418/24853/m15626/201708/626875.shtml',
+	dateStr: '08/22'
+},{
+	title: '冠军杯数据大盘点：Hurt排行KDA第一，不知火舞登顶胜率榜',
+	srcStr: 'https://pvp.qq.com/webplat/info/news_version3/15592/24418/24853/m15626/201708/626871.shtml',
+	dateStr: '08/22'
+},{
+	title: '2017王者荣耀冠军杯暨暑期盛典圆满结束 QGhappy王者降临战至终章',
+	srcStr: 'https://pvp.qq.com/webplat/info/news_version3/15592/24418/24853/m15626/201708/626434.shtml',
+	dateStr: '08/21'
+}]
 export const strategyVideoList = [{
-		imgSrc: 'http://shp.qpic.cn/cfwebcap/398753883/8869150191f68e5582fc8b1726668016/0/',
-		time: '25:34',
-		text: '【英雄周报】王者荣耀百里守约视频教学',
-		clickNum: '7.7万',
-		lastClickTime: '22小时以前'
+		imgSrc: 'http://itea-cdn.qq.com/file/tgl/20170815/212x127.1502790104.f6f800d94a88dee99340f2825efb50e3.jpg',
+		time: '05:13',
+		text: '跟我上王者 第36期：兰陵王隐身突进，五分钟教你血洗后排！',
+		clickNum: '4130',
+		lastClickTime: '14小时以前'
 },{
 		imgSrc: 'http://itea-cdn.qq.com/file/tgl/20170809/212x127.1502266613.14b80015009de88011aeb6103334c88e.jpg',
 		time: '08:34',
@@ -194,7 +227,75 @@ export const tanksList = [
 	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/168/168.jpg', title: '牛魔'},
 	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/171/171.jpg', title: '张飞'}
 ]
-
+export const warriorList = [
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/193/193.jpg', title: '铠'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/134/134.jpg', title: '达摩'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/140/140.jpg', title: '关羽'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/129/129.jpg', title: '典韦'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/130/130.jpg', title: '宫本武藏'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/166/166.jpg', title: '亚瑟'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/178/178.jpg', title: '杨戬'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/167/167.jpg', title: '孙悟空'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/128/128.jpg', title: '曹操'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/123/123.jpg', title: '吕布'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/107/107.jpg', title: '赵云'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/117/117.jpg', title: '钟无艳'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/139/139.jpg', title: '老夫子'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/146/146.jpg', title: '露娜'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/154/154.jpg', title: '花木兰'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/170/170.jpg', title: '刘备'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/183/183.jpg', title: '雅典娜'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/180/180.jpg', title: '哪吒'}
+]
+export const wizardList = [
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/121/121.jpg', title: '芈月'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/152/152.jpg', title: '王昭君'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/142/142.jpg', title: '安琪拉'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/127/127.jpg', title: '甄姬'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/148/148.jpg', title: '姜子牙'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/141/141.jpg', title: '貂蝉'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/182/182.jpg', title: '干将莫邪'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/190/190.jpg', title: '诸葛亮'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/109/109.jpg', title: '妲己'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/175/175.jpg', title: '钟馗'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/119/119.jpg', title: '扁鹊'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/106/106.jpg', title: '小乔'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/108/108.jpg', title: '墨子'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/110/110.jpg', title: '嬴政'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/115/115.jpg', title: '高渐离'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/124/124.jpg', title: '周瑜'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/136/136.jpg', title: '武则天'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/156/156.jpg', title: '张良'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/157/157.jpg', title: '不知火舞'}
+]
+export const shooterList = [
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/133/133.jpg', title: '狄仁杰'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/169/169.jpg', title: '后羿'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/112/112.jpg', title: '鲁班七号'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/192/192.jpg', title: '黄忠'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/132/132.jpg', title: '马可波罗'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/111/111.jpg', title: '孙尚香'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/173/173.jpg', title: '李元芳'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/174/174.jpg', title: '虞姬'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/177/177.jpg', title: '成吉思汗'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/196/196.jpg', title: '百里守约'}
+]
+export const assassinList = [
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/116/116.jpg', title: '阿珂'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/131/131.jpg', title: '李白'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/153/153.jpg', title: '兰陵王'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/150/150.jpg', title: '韩信'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/162/162.jpg', title: '娜可露露'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/163/163.jpg', title: '橘右京'}
+]
+export const assistList = [
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/113/113.jpg', title: '庄周'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/118/118.jpg', title: '孙膑'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/184/184.jpg', title: '蔡文姬'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/186/186.jpg', title: '太乙真人'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/191/191.jpg', title: '大乔'},
+	{path: 'http://game.gtimg.cn/images/yxzj/img201606/heroimg/189/189.jpg', title: '鬼谷子'}
+]
 export const newstNews = [{
 	title: "3日免费英雄更换公告",
 	article_url: "http://qt.qq.com/php_cgi/news/php/varcache_article.php?id=28955&version=$PROTO_VERSION$",

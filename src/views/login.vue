@@ -19,7 +19,7 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-.common-style (@fontSize: 35px){
+.common-style (@fontSize: 1rem){
   width: 100%;
   font-size: @fontSize;
 }
@@ -32,24 +32,25 @@ export default {
   justify-content: center;
   align-items: center;
   &-content {
-    position: fixed;
+    /*position: fixed;*/
     bottom: 0px;
-    &_tip {
+    /*&_tip {
       .common-style();
       padding: 200px 0;
       color: #fff;
       font-weight: bold;
-    }
+    }*/
     &_enter {
       .common-style();
       text-align: center;
-      padding: 30px;
+      padding: 1rem;
+      margin-top: 30rem;
     }
   }
 }
 .mu-raised-button {
   &-inverse {
-    padding: 30px;
+    padding: 1rem;
     color: #DAA520;
   }
 }
