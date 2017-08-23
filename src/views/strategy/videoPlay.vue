@@ -1,14 +1,14 @@
 <template lang="html">
     <div class="videoPlay">
-        <myVideo :sources="videoData.video.sources" :option="videoData.video.options"></myVideo>
+        <myVideo :sources="videoPlayData.video.sources" :option="videoPlayData.video.options"></myVideo>
         <div class="videoInfo">
             <a>
               <div class="videoInfo-img">
-                  <img :src="videoData.imgSrc" alt="">
+                  <img :src="videoPlayData.imgSrc" alt="">
               </div>
               <div class="videoInfo-title">
-                  <p class="summary">{{videoData.summary}}</p>
-                  <p class="number"><span>投稿：{{videoData.number}}</span><span>粉丝：{{videoData.fans}}</span></p>
+                  <p class="summary">{{videoPlayData.summary}}</p>
+                  <p class="number"><span>投稿：{{videoPlayData.number}}</span><span>粉丝：{{videoPlayData.fans}}</span></p>
               </div>
             </a>
         </div>
@@ -17,32 +17,23 @@
 
 <script>
 import myVideo from 'vue-video'
+import {mapState} from 'vuex'
 export default {
     data () {
        return {
-         videoData: {
-           index: 1,
-           channelName: '跟我上王者',
-           video: {
-               sources: [{
-                 src: 'static/video/video1.mp4',
-                 type: 'video/mp4'
-               }],
-               options: {
-                 autoplay: true,
-                 volume: 0.6,
-                 poster: 'http://covteam.u.qiniudn.com/poster.png'
-               }
-           },
-           imgSrc: 'https://ossweb-img.qq.com/images/pvp/v/pic_tl1.jpg',
-           summary: '跟我上王者 第36期：兰陵王隐身突进，五分钟教你血洗后排！',
-           number: '92',
-           fans: '5943'
-         }
+
        }
     },
     components: {
         myVideo
+    },
+    computed: mapState({
+        videoPlayData: state => state.videoPlayData
+    }),
+    created () {
+      this.$store.commit('getVideoPlayData', {
+        index: this.$route.params.index//此处放的是index,而不是路由参数对象
+      });
     }
 }
 </script>

@@ -1,7 +1,7 @@
 import Vue from 'Vue'
 import Vuex from 'Vuex'
 import axios from 'axios'
-import { newstNews, tanksList, warriorList, wizardList, shooterList, assassinList, assistList, heroInfo, heroSkillPlus, heroUseSkill, strategyBannerNews, strategyVideoList, gameNewsList} from '../data'
+import { newstNews, tanksList, warriorList, wizardList, shooterList, assassinList, assistList, heroInfo, heroSkillPlus, heroUseSkill, strategyBannerNews, strategyVideoList, strategyDataList, videoPlayDataList, gameNewsList} from '../data'
 Vue.use(Vuex);
 
 //TODO 对获取的数据进行分组处理
@@ -22,8 +22,10 @@ export default new Vuex.Store({
     heroInfo: {},//单个英雄信息
     heroSkillPlus: {},//英雄技能加点
     heroUseSkill: {},//英雄使用技巧
-    strategyBannerNews: [],//策略模块轮播图
-    strategyVideoList: {},//策略热门视频
+    strategyBannerNews: [],//攻略模块轮播图
+    strategyVideoList: {},//攻略热门视频
+    strategyDataList: [],//图文攻略
+    videoPlayData: {},//视频播放数据对象
     heroListData: [],//英雄列表
     gameNewsList: []//赛事资讯
   },
@@ -117,6 +119,13 @@ export default new Vuex.Store({
     },
     getStrategyVideoList(state){
         state.strategyVideoList = splitArray(strategyVideoList, 2);
+    },
+    getStrategyDataList(state){
+        state.strategyDataList = strategyDataList;
+    },
+    getVideoPlayData(state, payload){
+      console.log(payload);
+        state.videoPlayData = videoPlayDataList[payload.index];
     },
     //TODO 赛事页面
     getGameNewsList(state){

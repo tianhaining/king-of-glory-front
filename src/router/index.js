@@ -34,7 +34,7 @@ export default new Router({
           name: 'heroIntroduce',
           component: require('@/views/heroClassify/heroIntroduce'),
         },{
-          path: 'videoPlay',
+          path: 'videoPlay/:index',
           name: 'videoPlay',
           component: require('@/views/strategy/videoPlay.vue'),
         }]

@@ -1,12 +1,14 @@
 <template lang="html">
-  <div class="imgInfo">
-    <div class="imgInfo-img">
-        <img :src="dataObj.imgSrc" alt="">
-    </div>
-    <div class="imgInfo-title">
-        <p class="summary">{{dataObj.text}}</p>
-        <p class="number"><span>{{dataObj.time}}</span></p>
-    </div>
+  <div class="">
+    <a :href="dataObj.aHref" class="imgInfo">
+      <div class="imgInfo-img">
+          <img :src="dataObj.imgSrc" alt="">
+      </div>
+      <div class="imgInfo-title">
+          <p class="summary">{{dataObj.text}}</p>
+          <p class="number"><span>{{dataObj.time}}</span></p>
+      </div>
+    </a>
   </div>
 </template>
 

@@ -25,7 +25,7 @@ export default {
     props: ['videoCard'],
     methods: {
         goVideoPlay(){
-            this.$router.push('videoPlay');
+            this.$router.push({name: 'videoPlay', params: {index: this.videoCard.index}});
         }
     }
 }

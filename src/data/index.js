@@ -31,42 +31,188 @@ export const gameNewsList = [{
 	srcStr: 'https://pvp.qq.com/webplat/info/news_version3/15592/24418/24853/m15626/201708/626434.shtml',
 	dateStr: '08/21'
 }]
+export const videoPlayDataList = [{
+	index: 0,
+	channelName: '跟我上王者',
+	video: {
+			sources: [{
+				src: 'static/video/video1.mp4',
+				type: 'video/mp4'
+			}],
+			options: {
+				autoplay: true,
+				volume: 0.6,
+				poster: 'http://covteam.u.qiniudn.com/poster.png'
+			}
+	},
+	imgSrc: 'https://ossweb-img.qq.com/images/pvp/v/pic_tl1.jpg',
+	summary: '跟我上王者 第36期：兰陵王隐身突进，五分钟教你血洗后排！',
+	number: '92',
+	fans: '5943'
+},{
+	index: 1,
+	channelName: '王者职业教学',
+	video: {
+			sources: [{
+				src: 'static/video/video2.mp4',
+				type: 'video/mp4'
+			}],
+			options: {
+				autoplay: true,
+				volume: 0.6,
+				poster: 'http://covteam.u.qiniudn.com/poster.png'
+			}
+	},
+	imgSrc: 'https://ossweb-img.qq.com/images/pvp/v/pic_tl1.jpg',
+	summary: '《王者职业教学》第43期：老王无解英雄铠，完美控伤残血反杀！',
+	number: '0',
+	fans: '2203'
+},{
+	index: 2,
+	channelName: 'AG职业课堂',
+	video: {
+			sources: [{
+				src: 'static/video/video3.mp4',
+				type: 'video/mp4'
+			}],
+			options: {
+				autoplay: true,
+				volume: 0.6,
+				poster: 'http://covteam.u.qiniudn.com/poster.png'
+			}
+	},
+	imgSrc: 'https://ossweb-img.qq.com/images/pvp/v/pic_tl1.jpg',
+	summary: '《AG职业课堂》第11期：流苏百里守约 八百里外狙击心得',
+	number: '0',
+	fans: '2203'
+},{
+	index: 3,
+	channelName: '跟我上王者',
+	video: {
+			sources: [{
+				src: 'static/video/video4.mp4',
+				type: 'video/mp4'
+			}],
+			options: {
+				autoplay: true,
+				volume: 0.6,
+				poster: 'http://covteam.u.qiniudn.com/poster.png'
+			}
+	},
+	imgSrc: 'https://ossweb-img.qq.com/images/pvp/v/pic_tl1.jpg',
+	summary: '《跟我上王者》第35期：隐身靠墙绕后，五分钟学会百里守约！',
+	number: '0',
+	fans: '2203'
+},{
+	index: 4,
+	channelName: '跟我上王者',
+	video: {
+			sources: [{
+				src: 'static/video/video5.mp4',
+				type: 'video/mp4'
+			}],
+			options: {
+				autoplay: true,
+				volume: 0.6,
+				poster: 'http://covteam.u.qiniudn.com/poster.png'
+			}
+	},
+	imgSrc: 'https://ossweb-img.qq.com/images/pvp/v/pic_tl1.jpg',
+	summary: '《破冰英雄》第31期：老夫子的偷家绝学！',
+	number: '0',
+	fans: '2203'
+},{
+	index: 5,
+	channelName: '跟我上王者',
+	video: {
+			sources: [{
+				src: 'static/video/video6.mp4',
+				type: 'video/mp4'
+			}],
+			options: {
+				autoplay: true,
+				volume: 0.6,
+				poster: 'http://covteam.u.qiniudn.com/poster.png'
+			}
+	},
+	imgSrc: 'https://ossweb-img.qq.com/images/pvp/v/pic_tl1.jpg',
+	summary: '《数据封神榜》第二季第8期：胜率前几的英雄都有什么看家本领？',
+	number: '1',
+	fans: '107'
+}]
 export const strategyVideoList = [{
+		index: 0,
 		imgSrc: 'http://itea-cdn.qq.com/file/tgl/20170815/212x127.1502790104.f6f800d94a88dee99340f2825efb50e3.jpg',
 		time: '05:13',
 		text: '跟我上王者 第36期：兰陵王隐身突进，五分钟教你血洗后排！',
 		clickNum: '4130',
 		lastClickTime: '14小时以前'
 },{
+		index: 1,
 		imgSrc: 'http://itea-cdn.qq.com/file/tgl/20170809/212x127.1502266613.14b80015009de88011aeb6103334c88e.jpg',
 		time: '08:34',
 		text: '《王者职业教学》第43期：老王无解英雄铠，完美控伤残血反杀！',
 		clickNum: '3.8万',
 		lastClickTime: '22小时以前'
 },{
+		index: 2,
 		imgSrc: 'http://itea-cdn.qq.com/file/tgl/20170809/212x127.1502243227.8d62cc5bc7aef9f15c651d8b95721c81.jpg',
 		time: '08:00',
 		text: '《AG职业课堂》第11期：流苏百里守约 八百里外狙击心得',
 		clickNum: '12.8万',
 		lastClickTime: '一天以前'
 },{
+		index: 3,
 		imgSrc: 'http://itea-cdn.qq.com/file/tgl/20170807/212x1272.1502113210.684c35a70a59f2106bf5a534d6b40908.jpg',
 		time: '05:44',
 		text: '《跟我上王者》第35期：隐身靠墙绕后，五分钟学会百里守约！',
 		clickNum: '20.9万',
 		lastClickTime: '2天以前'
 },{
+		index: 4,
 		imgSrc: 'http://itea-cdn.qq.com/file/tgl/20170804/212x127.1501836828.caff48fc167c5c4a2a522749d5066098.jpg',
 		time: '07:40',
 		text: '《破冰英雄》第31期：老夫子的偷家绝学！',
 		clickNum: '24.6万',
 		lastClickTime: '5天以前'
 },{
+		index: 5,
 		imgSrc: 'http://itea-cdn.qq.com/file/tgl/20170804/173105.1501829919.6d375c33747c49a9f77ae25aeeb07793.jpg',
 		time: '05:19',
 		text: '《数据封神榜》第二季第8期：胜率前几的英雄都有什么看家本领？',
 		clickNum: '5061',
 		lastClickTime: '6天以前'
+}]
+export const strategyDataList = [{
+	aHref: 'http://pvp.qq.com/m/m201606/newCont.shtml?G_Biz=18&tid=125365',
+	imgSrc: 'http://itea-cdn.qq.com/file/tgl/20170811/1502441616.efd6a85fea5857fbad71d1a18ee8c38f.jpg',
+	text: '【一图识英雄】铁血都督周瑜，烽火连天战峡谷',
+	time: '08-13'
+},{
+	aHref: 'http://pvp.qq.com/m/m201606/newCont.shtml?G_Biz=18&tid=125037',
+	imgSrc: 'http://itea-cdn.qq.com/file/tgl/20170810/1502369343.e9fc181d928df160a247a7cd42f0fafc.jpg',
+	text: '团控女神甄姬冰冻全场',
+	time: '08-11'
+},{
+	aHref: 'http://pvp.qq.com/m/m201606/newCont.shtml?G_Biz=18&tid=124793',
+	imgSrc: 'http://itea-cdn.qq.com/file/tgl/20170809/1.1502288431.40282f39b22df8509aeea1061c4d1046.jpg',
+	text: '装备详解，末世适合于哪些射手英雄',
+	time: '08-10'
+},{
+	aHref: 'http://pvp.qq.com/m/m201606/newCont.shtml?G_Biz=18&tid=124564',
+	imgSrc: 'http://itea-cdn.qq.com/file/tgl/20170803/1501756573.e9517bd4d5643fbdbeb27e6c3e29852d.jpg',
+	text: '刘禅只是辅助坦克？这些召唤师技能改变思路！',
+	time: '08-09'
+},{
+	aHref: 'http://pvp.qq.com/m/m201606/newCont.shtml?G_Biz=18&tid=123565',
+	imgSrc: 'http://shp.qpic.cn/inewspic/791243504/d8bce3f8660e886241a9d43907e5de64/0/',
+	text: '长城守卫军策划探秘之百里守约篇',
+	time: '08-05'
+},{
+	aHref: 'http://pvp.qq.com/m/m201606/newCont.shtml?G_Biz=18&tid=94308',
+	imgSrc: 'http://shp.qpic.cn/inewspic/492250695/aa2784171d799d4f70ce2c219e25f88c/0/',
+	text: '命运的邂逅，长城下重生的异乡人',
+	time: '07-12'
 }]
 export const heroInfo = {
 	index: 'xiangyu',
