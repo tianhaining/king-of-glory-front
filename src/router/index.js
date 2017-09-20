@@ -30,7 +30,7 @@ export default new Router({
           name: 'game',
           component: require('@/views/game'),
         },{
-          path: 'heroIntroduce',
+          path: 'heroIntroduce/:name',
           name: 'heroIntroduce',
           component: require('@/views/heroClassify/heroIntroduce'),
         },{

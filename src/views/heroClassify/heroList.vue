@@ -5,7 +5,7 @@
         <card v-bind:cardInfo="item"></card>
       </mu-flexbox-item>
     </mu-flexbox>
-    <!-- <button type="button" name="button" @click="postTanksList">发送数据</button> -->
+    <!-- <button type="button" name="button" @click="postList">发送数据</button> -->
   </div>
 </template>
 
@@ -21,8 +21,8 @@ export default {
     card
   },
   methods: {
-      // postTanksList(){
-      //   this.$store.commit('postTanksList');
+      // postList(){
+      //   this.$store.commit('postAssistList');
       // }
   },
   props: ['heroList']

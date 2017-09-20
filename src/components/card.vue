@@ -1,5 +1,5 @@
 <template>
-  <div class="" @click="goHeroIntroduce">
+  <div class="" @click="goHeroIntroduce(cardInfo)">
     <mu-card>
       <mu-card-media>
         <img :src="cardInfo.path" />
@@ -18,8 +18,9 @@ export default {
   },
   props: ['cardInfo'],
   methods: {
-    goHeroIntroduce(){
-      this.$router.push('heroIntroduce');
+    goHeroIntroduce(cardInfo){
+      // this.$router.push('heroIntroduce');
+      this.$router.push({name: 'heroIntroduce', params: {name: cardInfo.title}});
     }
   }
 }

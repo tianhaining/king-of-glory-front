@@ -11,7 +11,7 @@
         <div class="skillPlus-div-text">
             <h3 class="skillPlus-div-text-h3">
               {{skillIntroduce.name}}
-              <span>(冷却值：{{skillIntroduce.coolingValue}} 消耗： {{skillIntroduce.consume}})</span>
+              <span>{{skillIntroduce.coolingValue}}</span>
             </h3>
             <p>{{skillIntroduce.text}}</p>
         </div>

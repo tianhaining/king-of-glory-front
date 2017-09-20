@@ -47,7 +47,9 @@ export default {
       heroInfo: state => state.heroInfo
   }),
   created(){
-      this.$store.commit('getHeroInfo');
+      this.$store.commit('getHeroInfo', {
+        name: this.$route.params.name
+      });
   }
 }
 </script>

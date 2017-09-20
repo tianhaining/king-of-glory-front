@@ -16,7 +16,7 @@ var splitArray = (arr, len) => {
 export default new Vuex.Store({
   state: {
     title: '资讯',//顶部显示
-    Host: 'http://10.202.4.235:8000',//后台API域名
+    Host: 'http://10.202.4.244:8000',//后台API域名
     bannersNewsData: '',//资讯轮播图
     newsData: '',//资讯信息
     heroInfo: {},//单个英雄信息
@@ -88,23 +88,104 @@ export default new Vuex.Store({
           state.heroListData = splitArray(res.data.tanksList, 4);
       })
     },
+
+    postWarriorList(state){
+      var warriorListInfo = warriorList;
+      warriorListInfo.forEach((val) => {
+        axios.post(state.Host + '/api/saveWarriorList', val)
+        .then((res) => {
+          console.log(res.data.message);
+        })
+        .catch((error) => {
+          console.log(error);
+        })
+      })
+    },
     getWarriorsData(state){
-      state.heroListData = splitArray(warriorList, 4);
+      axios.get(state.Host + '/api/getWarriorList')
+      .then(function(res){
+          state.heroListData = splitArray(res.data.warriorList, 4);
+      })
+    },
+
+    postWizardList(state){
+      var wizardListInfo = wizardList;
+      wizardListInfo.forEach( (val) => {
+          axios.post(state.Host + '/api/saveWizardList', val)
+          .then((res) => {
+            console.log(res.data.message);
+          })
+          .catch((error) => {
+            console.log(error);
+          })
+      })
     },
     getWizardData(state){
-      state.heroListData = splitArray(wizardList, 4);
+      axios.get(state.Host + '/api/getWizardList')
+      .then(function(res){
+        state.heroListData = splitArray(res.data.wizardList, 4);
+      })
+    },
+
+    postShooterList(state){
+      var shooterListInfo = shooterList;
+      shooterListInfo.forEach( (val) => {
+          axios.post(state.Host + '/api/saveShooterList', val)
+          .then((res) => {
+            console.log(res.data.message);
+          })
+          .catch((error) => {
+            console.log(error);
+          })
+      })
     },
     getShootersData(state){
-      state.heroListData = splitArray(shooterList, 4);
+      axios.get(state.Host + '/api/getShooterList')
+      .then(function(res){
+        state.heroListData = splitArray(res.data.shooterList, 4);
+      })
+    },
+
+    postAssassinList(state){
+      var assassinListInfo = assassinList;
+      assassinListInfo.forEach( (val) => {
+          axios.post(state.Host + '/api/saveAssassinList', val)
+          .then((res) => {
+            console.log(res.data.message);
+          })
+          .catch((error) => {
+            console.log(error);
+          })
+      })
     },
     getAssassinData(state){
-      state.heroListData = splitArray(assassinList, 4);
+      axios.get(state.Host + '/api/getAssassinList')
+      .then(function(res){
+        state.heroListData = splitArray(res.data.assassinList, 4);
+      })
+    },
+
+    postAssistList(state){
+      var assistListInfo = assistList;
+      assistListInfo.forEach( (val) => {
+          axios.post(state.Host + '/api/saveAssistList', val)
+          .then((res) => {
+            console.log(res.data.message);
+          })
+          .catch((error) => {
+            console.log(error);
+          })
+      })
     },
     getAssistData(state){
-      state.heroListData = splitArray(assistList, 4);
+      axios.get(state.Host + '/api/getAssistList')
+      .then(function(res){
+        state.heroListData = splitArray(res.data.assistList, 4);
+      })
     },
     //TODO 单个英雄介绍
-    getHeroInfo(state){//后续处理需要把信息放到数据库
+    getHeroInfo(state, payload){//后续处理需要把信息放到数据库
+        console.log(payload.name);
         state.heroInfo = heroInfo;
     },
     getHeroSkillPlus(state){//后续处理需要把信息放到数据库
@@ -124,7 +205,7 @@ export default new Vuex.Store({
         state.strategyDataList = strategyDataList;
     },
     getVideoPlayData(state, payload){
-      console.log(payload);
+      //console.log(payload);
         state.videoPlayData = videoPlayDataList[payload.index];
     },
     //TODO 赛事页面
