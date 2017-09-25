@@ -63,7 +63,9 @@ export default {
         heroUseSkill: state => state.heroUseSkill
     }),
     created(){
-        this.$store.commit('getHeroUseSkill');
+        this.$store.commit('getHeroUseSkill', {
+          name: this.$route.params.name
+        });
     }
 }
 </script>

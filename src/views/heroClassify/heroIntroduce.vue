@@ -1,8 +1,12 @@
 <template>
   <div class="heroIntroduce">
       <div class="sp_banner">
+          <div class="">
+            <img :src="heroInfo.imgSrc" alt="heroName">
+          </div>
           <div class="hero-info">
               <h3>{{heroInfo.name}}</h3>
+              <!-- <h3>{{heroName}}</h3> -->
           </div>
       </div>
       <div class="hero_introduce_nav">
@@ -30,6 +34,7 @@ export default {
   data () {
     return {
         activeTab: "introduce",
+        // heroName: ''
     }
   },
   methods: {
@@ -47,7 +52,11 @@ export default {
       heroInfo: state => state.heroInfo
   }),
   created(){
+      // this.heroName = this.$route.params.name;
       this.$store.commit('getHeroInfo', {
+        name: this.$route.params.name
+      });
+      this.$store.commit('getHeroSkillPlus', {//已进入英雄介绍就先获取一下数据，用于初始化
         name: this.$route.params.name
       });
   }
@@ -60,11 +69,14 @@ export default {
 }
 .sp_banner {
     margin-top: 3.16rem;
-    background: url('http://game.gtimg.cn/images/yxzj/img201606/heroimg/135/135-mobileskin-1.jpg');
     background-size: cover;
     border-radius: 5px;
-    height: 660px;
+    height: 15rem;
     position: relative;
+    img {
+      height: 15rem;
+      width: 25rem;
+    }
 }
 .hero-info {
     color: #fff;

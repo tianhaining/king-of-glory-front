@@ -64,7 +64,9 @@ export default {
         heroSkillPlus: state => state.heroSkillPlus
     }),
     created () {
-      this.$store.commit('getHeroSkillPlus');
+      // this.$store.commit('getHeroSkillPlus', {进入英雄介绍的时候就已经获取技能加点数据，此处不用重复取数据
+      //   name: this.$route.params.name
+      // });
       this.skillIntroduce = this.$store.state.heroSkillPlus.skill[0];
     },
     methods: {

@@ -22,7 +22,7 @@
             </div>
             <button class="pane-button" type="button" name="button" @click="openStory(0)">{{storyButtonValue}}</button>
         </div>
-        <div class="pane">
+        <div class="pane" v-show="hasHistory">
             <div class="pane-div">
                 <h3 class="pane-div-h3-history">历史上的他</h3>
                 <p :class="{'pane-div-p-close': isHistoryClose, 'pane-div-p-open': !isHistoryClose}">&nbsp;&nbsp;&nbsp;&nbsp;{{heroInfo.history}}</p>
@@ -67,7 +67,8 @@ export default {
       }
     },
     computed: mapState({
-      heroInfo: state => state.heroInfo
+      heroInfo: state => state.heroInfo,
+      hasHistory: state => state.hasHistory
     }),
     created(){
         // this.$store.commit('getHeroInfo');

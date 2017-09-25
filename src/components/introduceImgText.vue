@@ -6,7 +6,7 @@
             <img :src="item.imgSrc" alt="item.title">
           </div>
           <div class="pane-div-list-item-title">
-            <p class="summary">{{item.summary}}</p>
+            <p class="summary">{{item.text}}</p>
           </div>
         </a>
       </div>
