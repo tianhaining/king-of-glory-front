@@ -5,7 +5,7 @@
         <card v-bind:cardInfo="item"></card>
       </mu-flexbox-item>
     </mu-flexbox>
-    <button type="button" name="button" @click="postList">发送数据</button>
+    <!-- <button type="button" name="button" @click="postList">发送数据</button> -->
   </div>
 </template>
 

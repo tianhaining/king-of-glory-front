@@ -388,7 +388,7 @@ export default new Vuex.Store({
         }
       })
       .then(function(res){
-        state.videoPlayData = res.data.videoPlayData;
+        state.videoPlayData = res.data.videoPlayData[0];
       })
       .catch(function(error){
         console.log(error);

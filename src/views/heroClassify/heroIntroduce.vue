@@ -59,6 +59,9 @@ export default {
       this.$store.commit('getHeroSkillPlus', {//已进入英雄介绍就先获取一下数据，用于初始化
         name: this.$route.params.name
       });
+      this.$store.commit('getHeroUseSkill', {//已进入英雄介绍就先获取一下数据，用于初始化
+        name: this.$route.params.name
+      });
   }
 }
 </script>
