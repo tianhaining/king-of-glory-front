@@ -16,7 +16,7 @@ var splitArray = (arr, len) => {
 export default new Vuex.Store({
   state: {
     title: '资讯',//顶部显示
-    Host: 'http://10.202.4.55:8000',//后台API域名
+    Host: 'http://10.202.4.211:8000',//后台API域名
     bannersNewsData: '',//资讯轮播图
     newsData: '',//资讯信息
     heroInfo: {},//单个英雄信息
@@ -406,9 +406,27 @@ export default new Vuex.Store({
     //     state.videoPlayData = videoPlayDataList[payload.index];
     // },
     //TODO 赛事页面
+    postGameNewsList(state){
+      var gameNewsListInfo = gameNewsList;
+      gameNewsListInfo.forEach( (val) => {
+          axios.post(state.Host + '/api/saveGameNewsList', val)
+          .then((res) => {
+            console.log(res.data.message);
+          })
+          .catch((error) => {
+            console.log(error);
+          })
+      })
+    },
     getGameNewsList(state){
-      state.gameNewsList = gameNewsList;
-    }
+      axios.get(state.Host + '/api/getGameNewsList')
+      .then(function(res){
+        state.gameNewsList = res.data.gameNewsList;
+      })
+    },
+    // getGameNewsList(state){
+    //   state.gameNewsList = gameNewsList;
+    // }
   },
   actions: {
     getHeroList({commit, state}, payload){//可以向store.commit传入额外的参数，即mutation的载荷payload

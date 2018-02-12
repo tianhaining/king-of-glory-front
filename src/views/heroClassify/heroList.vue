@@ -21,9 +21,9 @@ export default {
     card
   },
   methods: {
-      postList(){
-        this.$store.commit('postVideoPlayDataList');
-      }
+      // postList(){
+      //   this.$store.commit('postGameNewsList');
+      // }
   },
   props: ['heroList']
 }
